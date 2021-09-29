@@ -28,3 +28,6 @@ class DoubanMovieItem(scrapy.Item):
     score_num = scrapy.Field()
     # 图片url
     url = scrapy.Field()
+
+class electricityItem(scrapy.Item):
+    remains = scrapy.Field()
