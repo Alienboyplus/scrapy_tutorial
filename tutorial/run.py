@@ -1,6 +1,7 @@
 from scrapy import cmdline
 import time
 import os
+import logging
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -15,6 +16,7 @@ if __name__ == '__main__':
             os.system('scrapy crawl electricity_query')
         except Exception as e:
             print(e)
+            # logging.info("Exception detected")+e
 
         time.sleep(3600)
 
