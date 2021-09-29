@@ -16,7 +16,7 @@ if __name__ == '__main__':
         except Exception as e:
             print(e)
 
-        time.sleep(60)
+        time.sleep(3600)
 
     # print(item['remains'])
 
