@@ -2,9 +2,12 @@ from scrapy import Request
 from scrapy.spiders import Spider
 from tutorial.items import electricityItem
 from tutorial.Email import mail
-import logging
 import time
-
+import logging
+logging.getLogger().setLevel(logging.INFO)
+logging.basicConfig(
+    filename='logs.log',
+)
 
 class ElectricitySpider(Spider):
     name = 'electricity_query'
@@ -25,6 +28,8 @@ class ElectricitySpider(Spider):
         print(remains)
         if remains < 10:
             mail(str(remains))
-            # logging.info("An email was sent in"+time.asctime(time.localtime(time.time())))
+            logging.info("An email was sent in"+time.asctime(time.localtime(time.time())))
+        else:
+            logging.info("Checked in " + time.asctime(time.localtime(time.time())))
         item['remains'] = remains
         yield item
