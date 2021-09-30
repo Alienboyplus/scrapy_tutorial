@@ -13,6 +13,7 @@ if __name__ == '__main__':
         #
         # item = cmdline.execute(cmd.split())
         try:
+            print
             os.system('scrapy crawl electricity_query')
         except Exception as e:
             print(e)
